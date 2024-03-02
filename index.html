@@ -20,28 +20,40 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         
-        input[type="text"], input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Registrazione Cresima</h2>
-        <form action="conferma.html">
+        <form id="registrationForm">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" required>
             <input type="submit" value="Registrati">
         </form>
+        <div id="confirmation" class="hidden">
+            <p>Sei stato invitato alla cresima di Ernesto. Vacci.</p>
+        </div>
     </div>
+    
+    <script>
+        // JavaScript per gestire la registrazione e la visualizzazione del messaggio di conferma
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita il comportamento predefinito di invio del modulo
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            // Puoi fare qualcosa con i valori del nome e dell'email qui
+            // In questo esempio, mostriamo semplicemente il messaggio di conferma
+            document.getElementById("registrationForm").classList.add("hidden"); // Nascondi il modulo di registrazione
+            document.getElementById("confirmation").classList.remove("hidden"); // Mostra il messaggio di conferma
+        });
+    </script>
 </body>
 </html>
