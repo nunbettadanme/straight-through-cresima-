@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Webpage</title>
+    <title>Dynamic Content</title>
     <style>
+        /* CSS for styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -40,23 +41,58 @@
             bottom: 0;
             width: 100%;
         }
+        .content {
+            display: none;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Cresima di Ernesto</h1>
+        <h1>Welcome to My Webpage</h1>
     </header>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Info</a>
-        <a href="#">Contatto</a>
+        <a href="#" onclick="showContent('content1')">Home</a>
+        <a href="#" onclick="showContent('content2')">About</a>
+        <a href="#" onclick="showContent('content3')">Contact</a>
     </nav>
-    <section>
-        <h2>Info</h2>
-        <p>Sei stato invitato per andare alla cresima di Ernesto che si terrà il 1 maggio 2024. Ti aspettiamo!.</p>
-    </section>
+
+    <!-- Content Sections -->
+    <div id="content1" class="content">
+        <section>
+            <h2>About Us</h2>
+            <p>This is the home content.</p>
+        </section>
+    </div>
+    <div id="content2" class="content">
+        <section>
+            <h2>About Us</h2>
+            <p>This is the about content.</p>
+        </section>
+    </div>
+    <div id="content3" class="content">
+        <section>
+            <h2>About Us</h2>
+            <p>This is the contact content.</p>
+        </section>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Cresima by Ernesto. All rights reserved.</p>
+        <p>&copy; 2024 My Webpage. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript function to show the selected content and hide others
+        function showContent(id) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                if (contents[i].id === id) {
+                    contents[i].style.display = 'block';
+                } else {
+                    contents[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 </body>
 </html>
