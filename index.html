@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="it"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Content</title>
+    <title>Cresima Festa</title>
     <style>
-        /* CSS for styling */
+        /* CSS per lo stile */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,15 +11,15 @@
             background-color: #f0f0f0;
         }
         header {
-            background-color: #333;
+            background-color: #00001a;
             color: #fff;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
         }
         nav {
-            background-color: #444;
+            background-color: #000033;
             color: #fff;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
         }
         nav a {
@@ -31,9 +29,13 @@
         }
         section {
             padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column; /* Aggiunto per fare in modo che il contenuto vada in colonna */
+            text-align: center; /* Aggiunto per centrare il testo */
         }
         footer {
-            background-color: #333;
+            background-color: #00001a;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -43,48 +45,61 @@
         }
         .content {
             display: none;
-            padding: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+        .content img {
+            width: 30vw; /* Imposta la larghezza dell'immagine al 70% della larghezza della finestra del browser */
+            max-width: 50%; /* Imposta la larghezza massima dell'immagine al 100% della larghezza della finestra del browser */
+            height: auto; /* Imposta l'altezza dell'immagine proporzionalmente alla larghezza */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Webpage</h1>
+        <h1>Bentornato!</h1>
     </header>
     <nav>
         <a href="#" onclick="showContent('content1')">Home</a>
-        <a href="#" onclick="showContent('content2')">About</a>
-        <a href="#" onclick="showContent('content3')">Contact</a>
+        <a href="#" onclick="showContent('content2')">Informazioni</a>
+        <a href="#" onclick="showContent('content3')">Contatto</a>
     </nav>
 
-    <!-- Content Sections -->
-    <div id="content1" class="content">
+    <!-- Sezioni di contenuto -->
+    <div id="content1" class="content" style="display: none;">
         <section>
-            <h2>About Us</h2>
-            <p>Hey tu! Sei stato invitato alla mia comunione. Lo sapevi? Beh adesso lo sai. Quindi ti aspetto! Se non vieni non sei più mio amico ti avviso..</p>
-            <img src="https://i.imgflip.com/1wgmql.jpg?a474504" alt="Funny Image">
+            <img src="https://i.imgflip.com/1wgmql.jpg?a474504" alt="Non lo so">
+            <div>
+                <h2>Benvenuto!</h2>
+                <p>Ehi tu! Se stai leggendo questo, congratulazioni! Hai appena guadagnato un pass VIP per l'evento più epico dell'anno: la mia cresima! Quindi segna sul calendario il primo di maggio, perché dovrai assolutamente esserci. Quindi niente, ti aspetto, chiunque tu sia!</p>
+            </div>
         </section>
     </div>
-    <div id="content2" class="content">
+    <div id="content2" class="content" style="display: block;">
         <section>
-            <h2>About Us</h2>
-            <p>Questo sito è stato creato da me. Non ti permettere a copiare o modificare il mio sito o ti denuncio. Ci ho messo tanto impegno.</p>
+            <h2>Informazioni</h2>
+            <div>
+                <p>Questo sito è stato creato da me. Non permettere a nessuno di copiare o modificare il mio sito, altrimenti li denuncio. Ci ho messo tanto impegno.</p>
+            </div>
         </section>
     </div>
-    <div id="content3" class="content">
+    <div id="content3" class="content" style="display: none;">
         <section>
-            <h2>About Us</h2>
-            <p>Mi chiamo Ernesto, ho 12 anni. Attualmente sto provando a programmare con un po' di linguaggi di programmazione.
-            Telefono: 392 743 1400</p>
+            <h2>Contatto</h2>
+            <div>
+                <p>Mi chiamo Ernesto, ho 12 anni. Attualmente sto provando a programmare con un po' di linguaggi di programmazione.
+                Telefono: 392 743 1400</p>
+                <img src="https://i.redd.it/297l8kz0ysba1.png" alt="Immagine Contatto">
+            </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 My Webpage. All rights reserved.</p>
+        <p>© 2024 i forgor. Tutti i diritti riservati.</p>
     </footer>
 
     <script>
-        // JavaScript function to show the selected content and hide others
+        // Funzione JavaScript per mostrare il contenuto selezionato e nascondere gli altri
         function showContent(id) {
             var contents = document.getElementsByClassName('content');
             for (var i = 0; i < contents.length; i++) {
@@ -96,5 +111,6 @@
             }
         }
     </script>
-</body>
-</html>
+
+
+</body></html>
